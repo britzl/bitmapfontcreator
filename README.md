@@ -35,6 +35,7 @@ impact.png:
 
 ![impact.png](https://raw.githubusercontent.com/britzl/bitmapfontcreator/master/impact.png)
 
+```JSON
 impact.json:
 {
 	"size":15,
@@ -119,3 +120,4 @@ impact.json:
 		"x":{"glyph":"x","x":37,"y":52,"w":7}
 	}
 }
+```
