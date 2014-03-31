@@ -28,7 +28,7 @@ The JSON format contains the size and an associative array/mapping between glyph
 
 example
 =======
-java -jar bitmapfontcreator.jar impact.ttf 15 glyphs_se.txt
+java -jar bitmapfontcreator.jar --ttf impact.ttf --size 15 --glyphs glyphs_se.txt --antialias --color FF000000
 
 Where glyphs_se.txt is a single line text file with the following characters:
 
