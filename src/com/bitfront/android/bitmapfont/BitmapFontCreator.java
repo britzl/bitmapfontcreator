@@ -87,19 +87,21 @@ public class BitmapFontCreator {
 		File file = new File(ttf);
 		String fileName = file.getName().substring(0, file.getName().lastIndexOf("."));		
 
-		log("Writing " + outDir + File.separator + fileName + ".png");
-		ImageIO.write(font.getImage(), "png", new FileOutputStream(new File(outDir + File.separator + fileName + ".png")));
+		log("Writing " + outDir + File.separator + fileName + "_" + size + ".png");
+		ImageIO.write(font.getImage(), "png", new FileOutputStream(new File(outDir + File.separator + fileName + "_" + size + ".png")));
 		
-		log("Writing " + outDir + File.separator + fileName + ".json");
+		log("Writing " + outDir + File.separator + fileName + "_" + size + ".json");
 		ObjectMapper mapper = new ObjectMapper();
-		mapper.writeValue(new File(outDir + File.separator + fileName + ".json"), font);
+		mapper.writeValue(new File(outDir + File.separator + fileName + "_" + size + ".json"), font);
 		
 		log("Done");
 		return font;
 	}
 	
 	private BitmapFont create(String fontFile, int size, String glyphs, int argb, boolean antiAlias) throws FontFormatException, IOException {
-		InputStream is = new FileInputStream(fontFile);
+		File f = new File(fontFile);
+		log("File " + f.toString() + " " + f.exists());
+		InputStream is = new FileInputStream(f);
 		Font font = Font.createFont(Font.TRUETYPE_FONT, is);
 		font = font.deriveFont(Font.PLAIN, size);
 		return create(font, size, glyphs, argb, antiAlias);
