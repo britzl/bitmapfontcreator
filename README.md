@@ -33,7 +33,7 @@ Will output impact.png and impact.json
 
 impact.png:
 
-![](https://github.com/britzl/bitmapfontcreator/blob/master/impact.png)
+![impact.png](https://raw.githubusercontent.com/britzl/bitmapfontcreator/master/impact.png)
 
 impact.json:
 {
