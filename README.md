@@ -2,7 +2,6 @@ bitmapfontcreator
 =================
 
 Create a bitmap font with a specific size, typeface and with a specific set of glyphs/characters
-
 usage
 =====
 Usage:
@@ -17,16 +16,13 @@ java -jar bitmapfontcreator.jar [options...]
  -o (--out) VAL         : Output directory to write PNG and JSON file to
  -s (--size) N          : Size to render font in (pixels)
 ```
-Will write a png and a json file in the current directory, both named the same as the TTF-file
-
-png info
+ouput
 ========
+The bitmapfontcreator will create a png and a json file in the specified directory, both named the same as the TTF-file
+
 The PNG will be rectangular and have a power-of-two width (and height). The PNG will have a transparent background and white, anti-aliased font.
 
-json format
-===========
 The JSON format contains the size and an associative array/mapping between glyph and glyph meta-data. The glyph meta-data contains the top-left pixel of the glyph and the glyph width.
-
 example
 =======
 java -jar bitmapfontcreator.jar --ttf impact.ttf --size 15 --glyphs glyphs_se.txt --antialias --color FF000000
