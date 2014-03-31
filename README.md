@@ -17,7 +17,7 @@ java -jar bitmapfontcreator.jar [options...]
  -o (--out) VAL         : Output directory to write PNG and JSON file to
  -s (--size) N          : Size to render font in (pixels)
 ```
-Will write a png and a json file in the current directory, both named the same as the TTF-file and with the size appended to the filenames.
+Will write a png and a json file in the current directory, both named the same as the TTF-file
 
 png info
 ========
@@ -35,11 +35,11 @@ Where glyphs_se.txt is a single line text file with the following characters:
 
  !?.,-+*_/1234567890abcdefghijklmnopqrstuvwxyzåäöABCDEFGHIJKLMNOPQRSTUVWXYZÅÄÖ
 
-Will output impact_15.png and impact_15.json
+Will output impact.png and impact.json
 
-impact_15.png:
+impact.png:
 
-![impact_15.png](https://raw.githubusercontent.com/britzl/bitmapfontcreator/master/impact_15.png)
+![impact.png](https://raw.githubusercontent.com/britzl/bitmapfontcreator/master/impact.png)
 
 impact.json:
 ```JSON
