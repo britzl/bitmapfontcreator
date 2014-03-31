@@ -5,7 +5,9 @@ Create a bitmap font with a specific size, typeface and with a specific set of g
 
 usage
 =====
-Usage: java -jar bitmapfontcreator.jar [options...]
+Usage:
+```
+java -jar bitmapfontcreator.jar [options...]
  -a (--antialias)       : Render font with anti alias enabled
  -c (--color) VAL       : Color to render font using. In hex format, including
                           alpha. (AARRGGBB)
@@ -13,7 +15,7 @@ Usage: java -jar bitmapfontcreator.jar [options...]
  -g (--glyphs) VAL      : path to a single line text file containing all
                           glyphs/characters to render
  -s (--size) N          : Size to render font in (pixels)
-
+```
 Will write a png and a json file in the current directory, both named the same as the TTF-file
 
 png info
