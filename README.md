@@ -5,17 +5,20 @@ Create a bitmap font with a specific size, typeface and with a specific set of g
 
 usage
 =====
-java -jar bitmapfontcreator.jar [TTF-file] [size] [glyph-file]
-
-	TTF-file = path to a valid TTF font
-	size = size to render font in (pixels)
-	glyph-file = path to a single line text file containing all glyphs/characters to render
+Usage: java -jar bitmapfontcreator.jar [options...]
+ -a (--antialias)       : Render font with anti alias enabled
+ -c (--color) VAL       : Color to render font using. In hex format, including
+                          alpha. (AARRGGBB)
+ -f (--font, --ttf) VAL : TTF-file to create bitmap font from
+ -g (--glyphs) VAL      : path to a single line text file containing all
+                          glyphs/characters to render
+ -s (--size) N          : Size to render font in (pixels)
 
 Will write a png and a json file in the current directory, both named the same as the TTF-file
 
 png info
 ========
-The PNG will be rectangular and have a power-of-two width (and height). The PNG will have a transparent background and white, anti-aliased font. Please post pull requests or create issues on GitHub if you need to be able to configure colors and anti-alias.
+The PNG will be rectangular and have a power-of-two width (and height). The PNG will have a transparent background and white, anti-aliased font.
 
 json format
 ===========
@@ -35,8 +38,8 @@ impact.png:
 
 ![impact.png](https://raw.githubusercontent.com/britzl/bitmapfontcreator/master/impact.png)
 
-```JSON
 impact.json:
+```JSON
 {
 	"size":15,
 	"glyphs": {
