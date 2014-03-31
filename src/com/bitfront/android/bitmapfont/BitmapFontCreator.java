@@ -51,6 +51,9 @@ public class BitmapFontCreator {
 	@Option(name="-a", aliases={"--antialias"}, usage="Render font with anti alias enabled", required=false)
 	private boolean antiAlias = false;
 	
+	@Option(name="-o", aliases={"--out"}, usage="Output directory to write PNG and JSON file to", required=false)
+	private String outDir = ".";
+	
 	@Argument
 	private List<String> arguments = new ArrayList<String>();
 	
@@ -84,12 +87,12 @@ public class BitmapFontCreator {
 		File file = new File(ttf);
 		String fileName = file.getName().substring(0, file.getName().lastIndexOf("."));		
 
-		log("Writing " + fileName + ".png");
-		ImageIO.write(font.getImage(), "png", new FileOutputStream(new File(fileName + ".png")));
+		log("Writing " + outDir + File.separator + fileName + ".png");
+		ImageIO.write(font.getImage(), "png", new FileOutputStream(new File(outDir + File.separator + fileName + ".png")));
 		
-		log("Writing " + fileName + ".json");
+		log("Writing " + outDir + File.separator + fileName + ".json");
 		ObjectMapper mapper = new ObjectMapper();
-		mapper.writeValue(new File(fileName + ".json"), font);
+		mapper.writeValue(new File(outDir + File.separator + fileName + ".json"), font);
 		
 		log("Done");
 		return font;

@@ -14,6 +14,7 @@ java -jar bitmapfontcreator.jar [options...]
  -f (--font, --ttf) VAL : TTF-file to create bitmap font from
  -g (--glyphs) VAL      : path to a single line text file containing all
                           glyphs/characters to render
+ -o (--out) VAL         : Output directory to write PNG and JSON file to
  -s (--size) N          : Size to render font in (pixels)
 ```
 Will write a png and a json file in the current directory, both named the same as the TTF-file
