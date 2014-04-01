@@ -106,10 +106,13 @@ public class BitmapFontCreator {
 	}
 	
 	private BitmapFont create(Font font, int size, String glyphs, int argb, boolean antiAlias) {
-		final int verticalSpacing = 3;
+		final int verticalSpacing = 1;
 	
 		FontMetrics fm = new Canvas().getFontMetrics(font);
-		final int area = fm.stringWidth(glyphs) * (size + verticalSpacing);	
+		final int ascent = (int)fm.getAscent();
+		final int descent = (int)fm.getDescent();
+
+		final int area = fm.stringWidth(glyphs) * (ascent + descent + verticalSpacing);	
 		final int width = Integer.highestOneBit((int)Math.ceil(Math.sqrt(area))) << 1;
 		final int height = width;
 
@@ -123,7 +126,6 @@ public class BitmapFontCreator {
 		
 		Map<Character, Glyph> glyphMap = new HashMap<Character, BitmapFont.Glyph>();
 		
-		final int ascent = (int)fm.getAscent();
 		final int glyphCount = glyphs.length();
 		int x = 0;
 		int y = ascent;
@@ -134,10 +136,10 @@ public class BitmapFontCreator {
 			int glyphWidth = r2d.getBounds().width;
 			if (x + glyphWidth > width) {
 				x = 0;
-				y = y + size + verticalSpacing;
+				y = y + ascent + descent + verticalSpacing;
 			}
 			graphics.drawString(glyphString, x, y);
-			glyphMap.put(glyph, new BitmapFont.Glyph(glyph, x, y, glyphWidth));
+			glyphMap.put(glyph, new BitmapFont.Glyph(glyph, x, y - ascent, glyphWidth));
 			x += glyphWidth;
 		}
 
